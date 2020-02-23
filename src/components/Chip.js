@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import { css } from "@emotion/core"
 import { Link } from "gatsby"
 
-const Chip = ({ children, disabled, path }) => {
+const Chip = ({ children, disabled, path, role }) => {
   return (
     <Link to={path}>
       <div
@@ -62,6 +62,7 @@ const Chip = ({ children, disabled, path }) => {
           line-height: 32px;
         `}
         className={disabled ? "disabled" : ""}
+        role={role}
       >
         {children}
       </div>
@@ -73,6 +74,7 @@ Chip.propTypes = {
   children: PropTypes.string,
   disabled: PropTypes.bool.isRequired,
   path: PropTypes.string,
+  role: PropTypes.string
 }
 
 export default Chip

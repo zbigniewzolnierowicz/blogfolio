@@ -24,7 +24,7 @@ const IndexPage = () => (
             timeToRead={edge.node.timeToRead}
             main={<p>{edge.node.excerpt}</p>}
             chips={edge.node.frontmatter.tags?.map(tag => (
-              <Chip key={tag} disabled={false} path={`/tags/${tag}`}>
+              <Chip key={tag} disabled={false} path={`/tags/${tag}`} role="listitem">
                 {tag}
               </Chip>
             ))}

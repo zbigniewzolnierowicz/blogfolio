@@ -81,35 +81,6 @@ const PostCardContainer = styled.div`
     var(--cardColorPrimary);
 `
 
-const PostCardHeader = styled.header`
-  grid-area: header;
-  cursor: default;
-  font-size: 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  a {
-    h3 {
-      margin: 0;
-    }
-    font-size: 4vh;
-    cursor: pointer;
-    text-decoration: none;
-    transition: 300ms color ease;
-    color: hsl(
-      var(--colorPrimary-h),
-      calc(10% + var(--colorPrimary-s)),
-      calc(100% - var(--colorPrimary-l))
-    );
-    &:hover {
-      color: hsl(
-        var(--colorPrimary-h),
-        100%,
-        calc(100% - var(--colorPrimary-l))
-      );
-    }
-  }
-`
 
 const PageCard = ({ main, chips, header, timeToRead, onClick, path }) => {
   const ref = useRef(null)
@@ -121,32 +92,69 @@ const PageCard = ({ main, chips, header, timeToRead, onClick, path }) => {
       onMouseLeave={event => resetRotate(event, ref.current)(event)}
       ref={ref}
     >
-      <PostCardHeader>{header}</PostCardHeader>
-      <main
+      <section
+        css={css`
+          grid-area: header;
+          cursor: default;
+          font-size: 1.5rem;
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          a {
+            h3 {
+              margin: 0;
+            }
+            font-size: 4vh;
+            cursor: pointer;
+            text-decoration: none;
+            transition: 300ms color ease;
+            color: hsl(
+              var(--colorPrimary-h),
+              calc(10% + var(--colorPrimary-s)),
+              calc(100% - var(--colorPrimary-l))
+            );
+            &:hover {
+              color: hsl(
+                var(--colorPrimary-h),
+                100%,
+                calc(100% - var(--colorPrimary-l))
+              );
+            }
+          }
+        `}
+      >
+        {header}
+      </section>
+      <section
         css={css`
           grid-area: main;
         `}
       >
         {main}
-      </main>
-      <div
-        className="chips"
-        role="list"
-        css={css`
-          grid-area: chips;
-          display: flex;
-          flex-direction: row;
-          justify-content: flex-start;
-          a {
-            &:last-of-type {
-              margin-right: 0;
+      </section>
+      {chips ? 
+        (<div
+          className="chips"
+          role="list"
+          css={css`
+            grid-area: chips;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            a {
+              &:last-of-type {
+                margin-right: 0;
+              }
+              margin-right: 1ch;
             }
-            margin-right: 1ch;
-          }
-        `}
-      >
-        {chips}
-      </div>
+          `}
+        >
+          {chips}
+        </div>)
+        :
+        (<>
+        </>)
+      }
       <section
         className="ttr"
         css={css`
@@ -165,12 +173,14 @@ const PageCard = ({ main, chips, header, timeToRead, onClick, path }) => {
       >
         {`${timeToRead} min`}
       </section>
-      <div
+      <Link
         className="navigator"
-        onClick={onClick}
         role="button"
+        tabIndex="0"
         aria-label={`read article called ${header}`}
+        to={path}
         css={css`
+          display: block;
           cursor: pointer;
           grid-area: navigator;
           align-self: flex-end;
@@ -192,10 +202,8 @@ const PageCard = ({ main, chips, header, timeToRead, onClick, path }) => {
           }
         `}
       >
-        <Link to={path}>
-          <ChevronRight />
-        </Link>
-      </div>
+        <ChevronRight />
+      </Link>
     </PostCardContainer>
   )
 }
