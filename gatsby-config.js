@@ -7,7 +7,7 @@ module.exports = {
       givenName: `Zbigniew`,
       familyName: `Żołnierowicz`,
     },
-    deployURL: `https://elastic-banach-594e2a.netlify.com`
+    deployURL: `https://elastic-banach-594e2a.netlify.com`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

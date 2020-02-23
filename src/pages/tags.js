@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql, StaticQuery, Link } from "gatsby"
+import { graphql, Link, useStaticQuery } from "gatsby"
 import Layout from "../components/layout"
 
 const pageQuery = graphql`
@@ -13,23 +13,21 @@ const pageQuery = graphql`
   }
 `
 
-const TagsPage = () => (
-  <Layout>
-    <StaticQuery
-      query={pageQuery}
-      render={data => (
-        <ul>
-          {data.tags.group.map(tag => (
-            <li>
-              <Link to={`/tags/${tag.fieldValue}`}>{tag.fieldValue}</Link>:{" "}
-              {tag.totalCount}
-            </li>
-          ))}
-        </ul>
-      )}
-    />
-  </Layout>
-)
+const TagsPage = () => {
+  const data = useStaticQuery(pageQuery)
+  return (
+    <Layout>
+      <ul>
+        {data.tags.group.map(tag => (
+          <li>
+            <Link to={`/tags/${tag.fieldValue}`}>{tag.fieldValue}</Link>:{" "}
+            {tag.totalCount}
+          </li>
+        ))}
+      </ul>
+    </Layout>
+  )
+}
 
 export default TagsPage
 export { TagsPage, pageQuery }
