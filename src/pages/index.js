@@ -1,20 +1,43 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link, graphql, StaticQuery } from "gatsby"
 
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
+import PageCard from "../components/PageCard"
+import "../style.scss"
+import Chip from "../components/Chip"
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
+    <SEO title="Home" description="Main page."/>
+    <StaticQuery
+      query={graphql`
+        {
+          allMarkdownRemark {
+            edges {
+              node {
+                id
+                timeToRead
+                excerpt
+                frontmatter {
+                  title
+                  path
+                }
+              }
+            }
+          }
+        }
+      `}
+      render={data => data.allMarkdownRemark.edges.map((edge) => (
+        <PageCard
+          header={<Link to={edge.node.frontmatter.path}><h3>{edge.node.frontmatter.title}</h3></Link>}
+          timeToRead={edge.node.timeToRead}
+          main={<p>{edge.node.excerpt}</p>}
+          chips={[<Chip key="a" disabled={false} path="/404">AAA</Chip>]}
+          path={edge.node.frontmatter.path}
+        />
+      ))}
+    />
   </Layout>
 )
 
