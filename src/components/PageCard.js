@@ -103,10 +103,7 @@ const PageCard = ({ main, chips, header, timeToRead, onClick, path }) => {
                 display: flex;
                 flex-direction: row;
                 justify-content: flex-start;
-                .md-chip {
-                    &:first-of-type {
-                        margin-left: 0;
-                    }
+                a {
                     &:last-of-type {
                         margin-right: 0;
                     }
