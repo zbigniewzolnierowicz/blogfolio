@@ -74,7 +74,7 @@ Chip.propTypes = {
   children: PropTypes.string,
   disabled: PropTypes.bool.isRequired,
   path: PropTypes.string,
-  role: PropTypes.string
+  role: PropTypes.string,
 }
 
 export default Chip

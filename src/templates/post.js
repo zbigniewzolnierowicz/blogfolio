@@ -1,9 +1,11 @@
 import React from "react"
 import { graphql } from "gatsby"
+import SEO from "../components/seo"
 export default function Template({ data }) {
-  const { frontmatter, html } = data.markdownRemark
+  const { frontmatter, html, excerpt } = data.markdownRemark
   return (
     <div className="blog-post">
+      <SEO description={excerpt} title={frontmatter.title} />
       <h1>{frontmatter.title}</h1>
       <h2>{frontmatter.date}</h2>
       <div
@@ -22,6 +24,7 @@ export const pageQuery = graphql`
         path
         title
       }
+      excerpt
     }
   }
 `

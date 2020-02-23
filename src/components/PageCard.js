@@ -81,7 +81,6 @@ const PostCardContainer = styled.div`
     var(--cardColorPrimary);
 `
 
-
 const PageCard = ({ main, chips, header, timeToRead, onClick, path }) => {
   const ref = useRef(null)
   return (
@@ -132,8 +131,8 @@ const PageCard = ({ main, chips, header, timeToRead, onClick, path }) => {
       >
         {main}
       </section>
-      {chips ? 
-        (<div
+      {chips ? (
+        <div
           className="chips"
           role="list"
           css={css`
@@ -150,11 +149,10 @@ const PageCard = ({ main, chips, header, timeToRead, onClick, path }) => {
           `}
         >
           {chips}
-        </div>)
-        :
-        (<>
-        </>)
-      }
+        </div>
+      ) : (
+        <></>
+      )}
       <section
         className="ttr"
         css={css`
