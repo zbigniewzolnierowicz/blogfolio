@@ -24,10 +24,6 @@ const Tags = ({ pageContext, data }) => {
           )
         })}
       </ul>
-      {/*
-              This links to a page that does not yet exist.
-              You'll come back to it!
-            */}
       <Link to="/tags">All tags</Link>
     </div>
   )
@@ -46,7 +42,7 @@ Tags.propTypes = {
             frontmatter: PropTypes.shape({
               title: PropTypes.string.isRequired,
               slug: PropTypes.string.isRequired,
-            })
+            }),
           }),
         }).isRequired
       ),
@@ -57,17 +53,20 @@ Tags.propTypes = {
 export default Tags
 
 export const pageQuery = graphql`
-  query ($tag: String!) {
-    allMarkdownRemark(limit: 2000, filter: {frontmatter: { tags: { in: [$tag] } }}) {
-            totalCount
-            edges {
-                node {
-                    frontmatter {
-                        title
-                        slug
-                    }
-                }
-            }
+  query($tag: String!) {
+    allMarkdownRemark(
+      limit: 2000
+      filter: { frontmatter: { tags: { in: [$tag] } } }
+    ) {
+      totalCount
+      edges {
+        node {
+          frontmatter {
+            title
+            slug
+          }
         }
+      }
     }
+  }
 `
