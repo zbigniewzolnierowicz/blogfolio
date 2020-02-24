@@ -7,7 +7,7 @@ import PageCard from "../components/PageCard"
 import "../style.scss"
 import Chip from "../components/Chip"
 
-const pageQuery = graphql`
+export const pageQuery = graphql`
   {
     file(name: { eq: "face" }) {
       publicURL
@@ -48,8 +48,8 @@ const pageQuery = graphql`
   }
 `
 
-const IndexPage = () => {
-  const data = useStaticQuery(pageQuery)
+const IndexPage = ({ data }) => {
+  // const data = useStaticQuery(pageQuery)
   return (
     <Layout>
       <SEO title="Home" description="Main page.">
@@ -127,4 +127,3 @@ const IndexPage = () => {
   )
 }
 export default IndexPage
-export { IndexPage, pageQuery }

@@ -1,8 +1,8 @@
 import React from "react"
-import { graphql, Link, useStaticQuery } from "gatsby"
+import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
 
-const pageQuery = graphql`
+export const pageQuery = graphql`
   query {
     tags: allMarkdownRemark(limit: 2000) {
       group(field: frontmatter___tags) {
@@ -13,8 +13,7 @@ const pageQuery = graphql`
   }
 `
 
-const TagsPage = () => {
-  const data = useStaticQuery(pageQuery)
+export const TagsPage = ({ data }) => {
   return (
     <Layout>
       <ul>
@@ -30,4 +29,3 @@ const TagsPage = () => {
 }
 
 export default TagsPage
-export { TagsPage, pageQuery }
