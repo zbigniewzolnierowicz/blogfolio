@@ -40,6 +40,7 @@ function resetRotate(event, ref) {
 }
 
 const PostCardContainer = styled.div`
+  height: fit-content;
   --distance: 21px;
   --cardColorPrimary: hsl(
     var(--colorPrimary-h),

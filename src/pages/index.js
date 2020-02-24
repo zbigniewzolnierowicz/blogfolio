@@ -1,5 +1,5 @@
 import React from "react"
-import { Link, graphql, useStaticQuery } from "gatsby"
+import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -29,7 +29,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    allMarkdownRemark {
+    allMarkdownRemark(sort: {order: ASC, fields: frontmatter___date}) {
       edges {
         node {
           id

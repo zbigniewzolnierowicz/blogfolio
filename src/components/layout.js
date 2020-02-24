@@ -20,11 +20,17 @@ min-height: 100%;
 margin: 0;
 display: grid;
 grid-template-columns: 1fr 1fr;
-grid-template-rows: 1fr auto 1fr;
+grid-template-rows: auto auto 1fr;
 grid-template-areas:
   "header ."
   "main main"
   "footer footer";
+`
+const MainWrapper = styled.main`
+  grid-area: main;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 `
 
 const Layout = ({ children }) => {
@@ -43,7 +49,7 @@ const Layout = ({ children }) => {
       <Header>
         <Link to="/"><h1>{data.site.siteMetadata.title}</h1></Link>
       </Header>
-      <main css={css`grid-area: main;`}>{children}</main>
+      <MainWrapper>{children}</MainWrapper>
       <footer css={css`grid-area: footer;`}></footer>
     </LayoutWrapper>
   )

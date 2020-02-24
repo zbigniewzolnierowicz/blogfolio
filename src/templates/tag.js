@@ -1,9 +1,10 @@
 import React from "react"
-import PropTypes from "prop-types"
 
 // Components
 import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
+import PageCard from "../components/PageCard"
+import Chip from "../components/Chip"
 
 const Tags = ({ pageContext, data }) => {
   const { tag } = pageContext
@@ -18,11 +19,28 @@ const Tags = ({ pageContext, data }) => {
         <h1>{tagHeader}</h1>
         <ul>
           {edges.map(({ node }) => {
-            const { title, slug } = node.frontmatter
             return (
-              <li key={slug}>
-                <Link to={slug}>{title}</Link>
-              </li>
+              <PageCard
+                key={node.id}
+                header={
+                  <Link to={node.frontmatter.path}>
+                    <h3>{node.frontmatter.title}</h3>
+                  </Link>
+                }
+                timeToRead={node.timeToRead}
+                main={<p>{node.excerpt}</p>}
+                chips={node.frontmatter.tags?.map(tagOfPost => (
+                  <Chip
+                    key={tagOfPost}
+                    disabled={tagOfPost === tag ? true : false}
+                    path={`/tags/${tagOfPost}`}
+                    role="listitem"
+                  >
+                    {tagOfPost}
+                  </Chip>
+                ))}
+                path={node.frontmatter.path}
+              />
             )
           })}
         </ul>
@@ -30,27 +48,6 @@ const Tags = ({ pageContext, data }) => {
       </div>
     </Layout>
   )
-}
-
-Tags.propTypes = {
-  pageContext: PropTypes.shape({
-    tag: PropTypes.string.isRequired,
-  }),
-  data: PropTypes.shape({
-    allMarkdownRemark: PropTypes.shape({
-      totalCount: PropTypes.number.isRequired,
-      edges: PropTypes.arrayOf(
-        PropTypes.shape({
-          node: PropTypes.shape({
-            frontmatter: PropTypes.shape({
-              title: PropTypes.string.isRequired,
-              slug: PropTypes.string.isRequired,
-            }),
-          }),
-        }).isRequired
-      ),
-    }),
-  }),
 }
 
 export default Tags
@@ -66,8 +63,11 @@ export const pageQuery = graphql`
         node {
           frontmatter {
             title
-            slug
+            path
+            tags
           }
+          timeToRead
+          excerpt
         }
       }
     }
