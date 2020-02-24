@@ -7,9 +7,25 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql, Link } from "gatsby"
+import styled from "@emotion/styled"
+import { css } from "@emotion/core"
 
 import Header from "./header"
+
+const LayoutWrapper = styled.div`
+width: 100%;
+height: 100%;
+min-height: 100%;
+margin: 0;
+display: grid;
+grid-template-columns: 1fr 1fr;
+grid-template-rows: 1fr auto 1fr;
+grid-template-areas:
+  "header ."
+  "main main"
+  "footer footer";
+`
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -23,11 +39,13 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <main>{children}</main>
-      <footer></footer>
-    </>
+    <LayoutWrapper>
+      <Header>
+        <Link to="/"><h1>{data.site.siteMetadata.title}</h1></Link>
+      </Header>
+      <main css={css`grid-area: main;`}>{children}</main>
+      <footer css={css`grid-area: footer;`}></footer>
+    </LayoutWrapper>
   )
 }
 

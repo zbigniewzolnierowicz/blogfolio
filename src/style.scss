@@ -13,7 +13,7 @@
   --sansSerifFont: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-body, html {
+body, html, div[role="group"][tabindex] {
   width: 100%;
   height: 100%;
   min-height: 100%;
@@ -22,6 +22,7 @@ body, html {
 
 h1, h2, h3, h4, h5 {
   font-family: var(--sansSerifFont);
+  margin: 0;
 }
 
 p {
@@ -41,8 +42,4 @@ code, pre {
   min-height: 100%;
   width: 100%;
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }
