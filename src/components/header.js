@@ -17,17 +17,15 @@ const Header = styled.header`
     var(--colorPrimary-s),
     calc(var(--colorPrimary-l) + 11%)
   );
-  background: var(--cardColorPrimary);
   grid-area: header;
   border-radius: 24px;
-  margin: 1em;
-  padding: 1em;
-  box-shadow: var(--distance) var(--distance) 36px var(--top-left-shadow),
-    calc(0px - var(--distance)) calc(0px - var(--distance)) 36px
-      var(--bottom-right-shadow);
-  color: hsl(var(--colorPrimary-h), 0%, calc(100% - var(--colorPrimary-l)));
+  padding: 1.5em;
   width: fit-content;
   justify-self: flex-start;
+  svg {
+    height: 100%;
+    width: 100%;
+  }
 `
 
 export default Header

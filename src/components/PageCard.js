@@ -105,21 +105,6 @@ const PageCard = ({ main, chips, header, timeToRead, onClick, path }) => {
               margin: 0;
             }
             font-size: 4vh;
-            cursor: pointer;
-            text-decoration: none;
-            transition: 300ms color ease;
-            color: hsl(
-              var(--colorPrimary-h),
-              calc(10% + var(--colorPrimary-s)),
-              calc(100% - var(--colorPrimary-l))
-            );
-            &:hover {
-              color: hsl(
-                var(--colorPrimary-h),
-                100%,
-                calc(100% - var(--colorPrimary-l))
-              );
-            }
           }
         `}
       >

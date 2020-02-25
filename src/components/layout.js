@@ -7,11 +7,12 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql, Link } from "gatsby"
+import { Link } from "gatsby"
 import styled from "@emotion/styled"
 import { css } from "@emotion/core"
 
 import Header from "./header"
+import { Logo } from "./Logo"
 
 const LayoutWrapper = styled.div`
   width: 100%;
@@ -19,37 +20,35 @@ const LayoutWrapper = styled.div`
   min-height: 100%;
   margin: 0;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto auto 1fr;
   grid-template-areas:
-    "header ."
-    "main main"
-    "footer footer";
+    "header . ."
+    "main main main"
+    "footer footer footer";
+  @media screen and (max-width: 992px) {
+    grid-template-areas:
+      "header header header"
+      "main main main"
+      "footer footer footer";
+  }
 `
 const MainWrapper = styled.main`
   grid-area: main;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: center;
+  > * {
+    flex-grow: 1;
+  }
 `
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-
   return (
     <LayoutWrapper>
       <Header>
-        <Link to="/">
-          <h1>{data.site.siteMetadata.title}</h1>
-        </Link>
+        <Link to="/"><Logo/></Link>
       </Header>
       <MainWrapper>{children}</MainWrapper>
       <footer

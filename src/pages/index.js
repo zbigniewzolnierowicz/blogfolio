@@ -97,7 +97,6 @@ const IndexPage = ({ data }) => {
           })}
         </script>
       </SEO>
-      <div>{data.file.childImageSharp.publicURL}</div>
       <>
         {data.allMarkdownRemark.edges.map(edge => (
           <PageCard
