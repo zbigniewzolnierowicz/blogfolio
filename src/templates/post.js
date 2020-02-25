@@ -10,26 +10,24 @@ export default function Template({ data }) {
       <div className="blog-post">
         <SEO description={excerpt} title={frontmatter.title}>
           <script type="application/ld+json">
-            {JSON.stringify(
-              {
+            {JSON.stringify({
+              "@context": "http://schema.org",
+              "@type": "Article",
+              headline: frontmatter.title,
+              url: deployURL + frontmatter.path,
+              datePublished: frontmatter.date,
+              author: {
                 "@context": "http://schema.org",
-                "@type": "Article",
-                "headline": frontmatter.title,
-                "url": deployURL + frontmatter.path,
-                "datePublished": frontmatter.date,
-                "author": {
-                  "@context": "http://schema.org",
-                  "@type": "Person",
-                  ...author,
-                },
-                "publisher": {
-                  "@context": "http://schema.org",
-                  "@type": "Person",
-                  ...author,
-                },
-                "image": deployURL + data.file.publicURL
-              }
-            )}
+                "@type": "Person",
+                ...author,
+              },
+              publisher: {
+                "@context": "http://schema.org",
+                "@type": "Person",
+                ...author,
+              },
+              image: deployURL + data.file.publicURL,
+            })}
           </script>
         </SEO>
         <h1>{frontmatter.title}</h1>

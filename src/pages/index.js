@@ -29,7 +29,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    allMarkdownRemark(sort: {order: ASC, fields: frontmatter___date}) {
+    allMarkdownRemark(sort: { order: ASC, fields: frontmatter___date }) {
       edges {
         node {
           id

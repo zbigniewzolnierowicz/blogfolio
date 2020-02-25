@@ -14,17 +14,17 @@ import { css } from "@emotion/core"
 import Header from "./header"
 
 const LayoutWrapper = styled.div`
-width: 100%;
-height: 100%;
-min-height: 100%;
-margin: 0;
-display: grid;
-grid-template-columns: 1fr 1fr;
-grid-template-rows: auto auto 1fr;
-grid-template-areas:
-  "header ."
-  "main main"
-  "footer footer";
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto 1fr;
+  grid-template-areas:
+    "header ."
+    "main main"
+    "footer footer";
 `
 const MainWrapper = styled.main`
   grid-area: main;
@@ -47,10 +47,16 @@ const Layout = ({ children }) => {
   return (
     <LayoutWrapper>
       <Header>
-        <Link to="/"><h1>{data.site.siteMetadata.title}</h1></Link>
+        <Link to="/">
+          <h1>{data.site.siteMetadata.title}</h1>
+        </Link>
       </Header>
       <MainWrapper>{children}</MainWrapper>
-      <footer css={css`grid-area: footer;`}></footer>
+      <footer
+        css={css`
+          grid-area: footer;
+        `}
+      ></footer>
     </LayoutWrapper>
   )
 }
