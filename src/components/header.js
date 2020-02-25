@@ -21,7 +21,6 @@ const Header = styled.header`
   border-radius: 24px;
   padding: 1.5em;
   width: fit-content;
-  justify-self: flex-start;
   svg {
     height: 100%;
     width: 100%;
