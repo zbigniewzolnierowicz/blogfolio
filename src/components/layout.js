@@ -48,7 +48,9 @@ const Layout = ({ children }) => {
   return (
     <LayoutWrapper>
       <Header>
-        <Link to="/"><Logo/></Link>
+        <Link to="/">
+          <Logo />
+        </Link>
       </Header>
       <MainWrapper>{children}</MainWrapper>
       <footer
