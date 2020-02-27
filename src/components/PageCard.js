@@ -60,7 +60,7 @@ const PostCardContainer = styled.div`
 
   display: grid;
   grid-template-columns: 3fr 1fr;
-  grid-template-rows: auto auto 3fr 1fr;
+  grid-template-rows: 1fr 1fr 2fr 1fr;
   grid-template-areas:
     "header header ttr"
     "header header ."
@@ -96,7 +96,7 @@ const PageCard = ({ main, chips, header, timeToRead, onClick, path }) => {
         css={css`
           grid-area: header;
           cursor: default;
-          font-size: 1.5rem;
+          font-size: 2rem;
           display: flex;
           align-items: center;
           justify-content: flex-start;
@@ -104,7 +104,6 @@ const PageCard = ({ main, chips, header, timeToRead, onClick, path }) => {
             h3 {
               margin: 0;
             }
-            font-size: 4vh;
           }
         `}
       >
@@ -113,6 +112,7 @@ const PageCard = ({ main, chips, header, timeToRead, onClick, path }) => {
       <section
         css={css`
           grid-area: main;
+          font-size: 1em;
         `}
       >
         {main}
