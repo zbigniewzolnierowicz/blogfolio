@@ -97,24 +97,25 @@ const PostPage = ({ data }) => {
           })}
         </script>
         <script type="application/ld+json">
-          {
-            JSON.stringify({
-              "@context": "http://schema.org",
-              "@type": "BreadcrumbList",
-              "itemListElement": [{
+          {JSON.stringify({
+            "@context": "http://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
                 "@type": "ListItem",
-                "position": 1,
-                "name": "Main Page",
-                "item": data.site.siteMetadata.deployURL
-              },{
+                position: 1,
+                name: "Main Page",
+                item: data.site.siteMetadata.deployURL,
+              },
+              {
                 "@type": "ListItem",
-                "position": 2,
-                "name": "item-2-name",
-                "item": data.site.siteMetadata.deployURL + "/post"
-              }]
-            })
-          }
-        </script>    
+                position: 2,
+                name: "Blog",
+                item: data.site.siteMetadata.deployURL + "/post",
+              },
+            ],
+          })}
+        </script>
       </SEO>
       <>
         {data.allMarkdownRemark.edges.map(edge => (
