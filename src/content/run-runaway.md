@@ -2,7 +2,7 @@
 title: "Run, runaway!"
 date: 2020-02-17
 slug: "run-runaway"
-path: /run-runaway
+path: /post/run-runaway
 excerpt: "I'm talking about the beginning of the game I want to make in the future. It talks about Code Talker, a prolific engineer said to be able to talk machines back to life."
 tags:
   - "story"

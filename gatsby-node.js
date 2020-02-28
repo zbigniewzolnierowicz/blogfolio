@@ -39,7 +39,7 @@ exports.createPages = async ({ actions, graphql }) => {
   const tags = result.data.tagsGroup.group
   tags.forEach(tag => {
     createPage({
-      path: `/tags/${tag.fieldValue}`,
+      path: `/tag/${tag.fieldValue}`,
       component: path.resolve(`src/templates/tag.js`),
       context: {
         tag: tag.fieldValue,

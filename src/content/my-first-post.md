@@ -1,7 +1,7 @@
 ---
 title: My First Post
 date: 2019-07-10
-path: /my-first-post
+path: /post/my-first-post
 tags:
   - "story"
 ---

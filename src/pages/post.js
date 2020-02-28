@@ -1,0 +1,147 @@
+import React from "react"
+import { Link, graphql } from "gatsby"
+
+import Layout from "../components/layout"
+import SEO from "../components/seo"
+import PageCard from "../components/PageCard"
+import "../style.scss"
+import Chip from "../components/Chip"
+
+export const pageQuery = graphql`
+  {
+    file(name: { eq: "face" }) {
+      publicURL
+      childImageSharp {
+        fixed {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    site {
+      siteMetadata {
+        title
+        description
+        deployURL
+        author {
+          familyName
+          givenName
+          name
+        }
+      }
+    }
+    allMarkdownRemark(sort: { order: ASC, fields: frontmatter___date }) {
+      edges {
+        node {
+          id
+          timeToRead
+          excerpt
+          html
+          frontmatter {
+            title
+            tags
+            date
+            path
+          }
+        }
+      }
+    }
+  }
+`
+
+const PostPage = ({ data }) => {
+  // const data = useStaticQuery(pageQuery)
+  return (
+    <Layout>
+      <SEO title="Home" description="Main page.">
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "http://schema.org",
+            "@type": "Blog",
+            author: {
+              "@context": "http://schema.org",
+              "@type": "Person",
+              ...data.site.siteMetadata.author,
+            },
+            publisher: {
+              "@context": "http://schema.org",
+              "@type": "Person",
+              ...data.site.siteMetadata.author,
+            },
+            headline: data.site.siteMetadata.title,
+            description: data.site.siteMetadata.description,
+            abstract: data.site.siteMetadata.description,
+            image: data.site.siteMetadata.deployURL + data.file.publicURL,
+            url: data.site.siteMetadata.deployURL,
+            blogPost: data.allMarkdownRemark.edges.map(post => {
+              return {
+                "@context": "http://schema.org",
+                "@type": "BlogPosting",
+                articleBody: post.node.html,
+                headline: post.node.frontmatter.title,
+                author: {
+                  "@context": "http://schema.org",
+                  "@type": "Person",
+                  ...data.site.siteMetadata.author,
+                },
+                publisher: {
+                  "@context": "http://schema.org",
+                  "@type": "Person",
+                  ...data.site.siteMetadata.author,
+                },
+                datePublished: post.node.frontmatter.date,
+                image: data.site.siteMetadata.deployURL + data.file.publicURL,
+                url:
+                  data.site.siteMetadata.deployURL + post.node.frontmatter.path,
+              }
+            }),
+          })}
+        </script>
+        <script type="application/ld+json">
+          {
+            JSON.stringify({
+              "@context": "http://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [{
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Main Page",
+                "item": data.site.siteMetadata.deployURL
+              },{
+                "@type": "ListItem",
+                "position": 2,
+                "name": "item-2-name",
+                "item": data.site.siteMetadata.deployURL + "/post"
+              }]
+            })
+          }
+        </script>    
+      </SEO>
+      <>
+        {data.allMarkdownRemark.edges.map(edge => (
+          <PageCard
+            key={edge.node.id}
+            header={
+              <Link to={`${edge.node.frontmatter.path}`}>
+                <h3>{edge.node.frontmatter.title}</h3>
+              </Link>
+            }
+            timeToRead={edge.node.timeToRead}
+            main={<p>{edge.node.excerpt}</p>}
+            chips={edge.node.frontmatter.tags?.map(tag => (
+              <Chip
+                key={tag}
+                disabled={false}
+                path={`/tag/${tag}`}
+                role="listitem"
+              >
+                {tag}
+              </Chip>
+            ))}
+            path={edge.node.frontmatter.path}
+          />
+        ))}
+      </>
+    </Layout>
+  )
+}
+export default PostPage

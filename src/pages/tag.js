@@ -13,7 +13,7 @@ export const pageQuery = graphql`
   }
 `
 
-export const TagsPage = ({ data }) => {
+export const TagPage = ({ data }) => {
   return (
     <Layout>
       <ul>
@@ -28,4 +28,4 @@ export const TagsPage = ({ data }) => {
   )
 }
 
-export default TagsPage
+export default TagPage

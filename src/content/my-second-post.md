@@ -2,7 +2,7 @@
 title: My Second Post
 date: 2020-02-23
 slug: my-second-post
-path: /my-second-post
+path: /post/my-second-post
 tags:
   - "creative"
 ---
