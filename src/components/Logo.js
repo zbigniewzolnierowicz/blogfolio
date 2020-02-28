@@ -16,7 +16,9 @@ export const Logo = () => {
         <style></style>
       </defs>
       <title id="title">logo</title>
-      <desc id="desc">zolnierowi dot cz followed by three parallelograms of different colors</desc>
+      <desc id="desc">
+        zolnierowi dot cz followed by three parallelograms of different colors
+      </desc>
       <path
         role="presentation"
         d="M3.19,12.52H20.92v4.77L8.73,30.54l1-.12c.3,0,.62-.05.95-.06l1,0h9.7v4.41H2.87V30L15.11,16.76l-1,.08q-.45,0-1,.06c-.37,0-.71,0-1,0H3.19Z"

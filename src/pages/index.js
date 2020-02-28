@@ -4,7 +4,6 @@ import SEO from "../components/seo"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
 
-
 const pageQuery = graphql`
   query {
     file(name: { eq: "face" }) {
@@ -19,11 +18,10 @@ const pageQuery = graphql`
   }
 `
 
-const IndexPage = ({data}) => {
+const IndexPage = ({ data }) => {
   return (
     <Layout>
-      <SEO description="Main page" title="Main page">
-      </SEO>
+      <SEO description="Main page" title="Main page"></SEO>
       <article>
         <h2>I code.</h2>
         <Img fixed={data.file.childImageSharp.fixed} />
@@ -32,8 +30,5 @@ const IndexPage = ({data}) => {
   )
 }
 
-export {
-  IndexPage,
-  pageQuery
-}
+export { IndexPage, pageQuery }
 export default IndexPage
