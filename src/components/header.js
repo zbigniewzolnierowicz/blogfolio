@@ -7,6 +7,10 @@ const Header = ({ siteTitle }) => (
     css={css`
       grid-area: header;
       background: linear-gradient(180deg, rgb(22, 44, 62) 30%, transparent);
+      height: 10vh;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
     `}
   >
     <div>
