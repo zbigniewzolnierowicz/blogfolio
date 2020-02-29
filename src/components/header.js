@@ -6,7 +6,7 @@ const Header = ({ siteTitle }) => (
   <header
     css={css`
       grid-area: header;
-      background: linear-gradient(180deg, rgb(22, 44, 62) 30%, transparent);
+      background: rgb(0, 11, 25);
       height: 10vh;
       width: 100%;
       display: flex;
@@ -14,8 +14,15 @@ const Header = ({ siteTitle }) => (
       align-items: center;
       position: fixed;
       top: 0;
+      @media screen and (max-width: 935px) {
+        top: unset;
+        bottom: 0;
+      }
     `}
-  ></header>
+  >
+    <Link to="/404">My projects</Link>
+    <Link to="/404">My blog</Link>
+  </header>
 )
 
 export default Header

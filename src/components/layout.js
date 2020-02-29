@@ -22,6 +22,11 @@ const MainWrapper = styled.main`
   div:first-of-type {
     margin-top: 10vh;
   }
+  @media screen and (max-width: 935px) {
+    div:first-of-type {
+      margin-top: 0;
+    }
+  }
 `
 
 const Layout = ({ children }) => {
@@ -45,6 +50,9 @@ const Layout = ({ children }) => {
       <footer
         css={css`
           grid-area: footer;
+          @media screen and (max-width: 935px) {
+            margin-bottom: 10vh;
+          }
         `}
       >
         © {new Date().getFullYear()}, Built with
