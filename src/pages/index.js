@@ -5,6 +5,7 @@ import styled from "@emotion/styled"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import { ScrollIndicator } from "../components/ScrollIndicator"
 
 const SingleScreenWrapper = styled.div`
   padding: 20px;
@@ -37,8 +38,8 @@ const IndexPage = () => {
       }
       file(relativePath: { eq: "face.svg" }) {
         publicURL
-          }
-        }
+      }
+    }
   `)
   return (
     <Layout>
@@ -79,6 +80,11 @@ const IndexPage = () => {
             }
           `}
         />
+      <ScrollIndicator svgStyle={css`
+        grid-row: -1 / -1;
+        grid-column: 3 / 3;
+      `}>
+      </ScrollIndicator>
       </SingleScreenWrapper>
       <SingleScreenWrapper
         css={css`
