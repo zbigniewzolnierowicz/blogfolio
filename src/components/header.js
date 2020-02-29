@@ -15,9 +15,7 @@ const Header = ({ siteTitle }) => (
       position: fixed;
       top: 0;
     `}
-  >
-    
-  </header>
+  ></header>
 )
 
 export default Header
