@@ -20,8 +20,8 @@ const SingleScreenWrapper = styled.div`
 `
 
 const IndexPage = () => {
-  const sect_1 = useRef(null);
-  const sect_2 = useRef(null);
+  const sect_1 = useRef(null)
+  const sect_2 = useRef(null)
   const data = useStaticQuery(graphql`
     {
       site {
@@ -79,14 +79,13 @@ const IndexPage = () => {
             }
           `}
         />
-      <ScrollIndicator
-        svgStyle={css`
-          grid-row: -1 / -1;
-          grid-column: 3 / 3;
-        `}
-        onClick={() => scrollToRef(sect_2)}
-      >
-      </ScrollIndicator>
+        <ScrollIndicator
+          svgStyle={css`
+            grid-row: -1 / -1;
+            grid-column: 3 / 3;
+          `}
+          onClick={() => scrollToRef(sect_2)}
+        ></ScrollIndicator>
       </SingleScreenWrapper>
       <SingleScreenWrapper
         ref={sect_2}

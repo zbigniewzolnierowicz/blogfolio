@@ -1,17 +1,20 @@
 import React from "react"
 import { Timeline, Tween } from "react-gsap"
-import { css } from '@emotion/core'
+import { css } from "@emotion/core"
 
 export const ScrollIndicator = ({ svgStyle, onClick }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 124 371.62"
-    css={[svgStyle, css`
-      height: 10vh;
-      g {
-        fill: #ffffff;
-      }
-    `]}
+    css={[
+      svgStyle,
+      css`
+        height: 10vh;
+        g {
+          fill: #ffffff;
+        }
+      `,
+    ]}
     onClick={onClick}
   >
     <g id="TrackLayer">
@@ -37,10 +40,10 @@ export const ScrollIndicator = ({ svgStyle, onClick }) => (
         delay={1}
         repeat={-1}
       >
-      <Tween from={{ opacity: 0 }} to={{ opacity: 1 }} />
-      <Tween from={{ y: 50 }} to={{ y: 295 }} ease="Expo.easeOut" />
-      <Tween from={{ opacity: 1 }} to={{ opacity: 0 }} />
-      <Tween from={{ y: 295 }} to={{ y: 50 }} />
+        <Tween from={{ opacity: 0 }} to={{ opacity: 1 }} />
+        <Tween from={{ y: 50 }} to={{ y: 295 }} ease="Expo.easeOut" />
+        <Tween from={{ opacity: 1 }} to={{ opacity: 0 }} />
+        <Tween from={{ y: 295 }} to={{ y: 50 }} />
       </Timeline>
     </g>
   </svg>
