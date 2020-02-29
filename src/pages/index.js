@@ -35,17 +35,11 @@ const IndexPage = () => {
           description
         }
       }
-      file(relativePath: { eq: "me.jpg" }) {
-        childImageSharp {
-          fluid(maxHeight: 500, maxWidth: 500) {
-            srcSet
-            sizes
+      file(relativePath: { eq: "face.svg" }) {
+        publicURL
           }
         }
-      }
-    }
   `)
-  const imgData = { ...data.file.childImageSharp.fluid }
   return (
     <Layout>
       <SEO title="Home" />
@@ -69,13 +63,11 @@ const IndexPage = () => {
           <h3>{data.site.siteMetadata.description}</h3>
         </article>
         <img
-          {...imgData}
+          src={data.file.publicURL}
           loading="lazy"
           alt="my face"
           css={css`
             margin: 20px;
-            box-shadow: 20px 20px 60px #143a50, -20px -20px 60px #1a4e6c;
-            border-radius: 25px;
             max-height: 100%;
             max-width: 100%;
             object-fit: contain;
