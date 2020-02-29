@@ -8,24 +8,15 @@ const Header = ({ siteTitle }) => (
       grid-area: header;
       background: linear-gradient(180deg, rgb(22, 44, 62) 30%, transparent);
       height: 10vh;
+      width: 100%;
       display: flex;
       flex-direction: row;
       align-items: center;
+      position: fixed;
+      top: 0;
     `}
   >
-    <div>
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
+    
   </header>
 )
 

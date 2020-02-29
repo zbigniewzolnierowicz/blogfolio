@@ -1,10 +1,31 @@
 import React from "react"
 import { css } from "@emotion/core"
 import { graphql, useStaticQuery } from "gatsby"
-import { Timeline, Tween, SplitWords } from "react-gsap";
+import styled from "@emotion/styled";
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+
+const SingleScreenWrapper = styled.div`
+  padding: 20px;
+  height: 90vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  article {
+    grid-row: 2 / span 2;
+    grid-column: 1 / span 2;
+  }
+  color: white;
+  justify-items: center;
+  align-items: center;
+  @media screen and (max-width: 935px) {
+    article {
+      grid-row: 1 / span 2;
+      grid-column: 1 / -1;
+    }
+  }
+`
 
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
@@ -28,28 +49,7 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Home" />
-      <div
-        css={css`
-          padding: 20px;
-          height: calc(90vh - 20px);
-          display: grid;
-          grid-template-columns: 1fr 1fr 1fr 1fr;
-          grid-template-rows: 1fr 1fr 1fr 1fr;
-          article {
-            grid-row: 2 / span 2;
-            grid-column: 1 / span 2;
-          }
-          color: white;
-          justify-items: center;
-          align-items: center;
-          @media screen and (max-width: 935px) {
-            article {
-              grid-row: 1 / span 2;
-              grid-column: 1 / -1;
-            }
-          }
-        `}
-      >
+      <SingleScreenWrapper>
         <article
           css={css`
             text-align: center;
@@ -63,45 +63,11 @@ const IndexPage = () => {
               font-size: 2rem;
             }
         `}>
-          <Timeline
-            target={
-              <h2>
-                Zbigniew Żołnierowicz
-              </h2>
-            }
-          >
-            <Tween
-              from={{ y: "125px", opacity: 0, scale: 0 }}
-              ease="Sin.easeOut"
-              duration={0.75}
-            />
-            <Tween
-              to={{ y: 0, opacity: 1, scale: 1 }}
-            />
-          </Timeline>
-          <Timeline 
-            target={
-              <h3>{data.site.siteMetadata.description}</h3>
-            }
-            delay={0.75}
-          >
-            <Tween
-              from={{ y: "125px", opacity: 0, scale: 0 }}
-              ease="Sin.easeOut"
-              duration={0.5}
-            />
-            <Tween
-              to={{ y: 0, opacity: 1, scale: 1 }}
-            />
-          </Timeline>
+          <h2>
+            Zbigniew Żołnierowicz
+          </h2>
+          <h3>{data.site.siteMetadata.description}</h3>
         </article>
-        <Tween
-          from={{ rotationX: '90deg', rotationZ: '90deg' }}
-          to={{ rotationX: 0, rotationZ: 0 }}
-          duration={1}
-          delay={1}
-          ease="Sin.easeOut"
-        >
           <img
             {...imgData}
             loading="lazy"
@@ -115,16 +81,22 @@ const IndexPage = () => {
               max-height: 100%;
               max-width: 100%;
               object-fit: contain;
-              grid-row: 2 / span 2;
-              grid-column: auto / span 2;
+              grid-row: 2 / span 3;
+              grid-column: 4 / span 2;
               @media screen and (max-width: 935px) {
-                grid-row: 3 / span 2;
-                grid-column: 1 / -1;
+                grid-row: 3 / span 3;
+                grid-column: 2 / -2;
               }
             `}
           />
-        </Tween>
-      </div>
+      </SingleScreenWrapper>
+      <SingleScreenWrapper css={css`
+        height: 100vh;
+      `}>
+        <article>
+          <h2>Wow! Me!</h2>
+        </article>
+      </SingleScreenWrapper>
     </Layout>
   )
 }

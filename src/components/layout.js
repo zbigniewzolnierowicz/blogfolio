@@ -12,11 +12,16 @@ const AppWrapper = styled.div`
   flex-direction: column;
   min-height: 100%;
   width: 100%;
-  background:
-    url(${props => props.bgUrl}),
-    rgb(42, 96, 137);
+  background: url(${props => props.bgUrl}), rgb(42, 96, 137);
   background-position: center;
   background-size: cover;
+`
+
+const MainWrapper = styled.main`
+  grid-area: main;
+  div:first-of-type {
+    margin-top: 10vh;
+  }
 `
 
 const Layout = ({ children }) => {
@@ -27,7 +32,7 @@ const Layout = ({ children }) => {
           title
         }
       }
-      backgroundPath: file(relativePath: {eq: "bg.jpg"}) {
+      backgroundPath: file(relativePath: { eq: "bg.jpg" }) {
         publicURL
       }
     }
@@ -36,12 +41,12 @@ const Layout = ({ children }) => {
   return (
     <AppWrapper bgUrl={data.backgroundPath.publicURL}>
       <Header siteTitle={data.site.siteMetadata.title} />
-      <main css={css`
-        grid-area: main;
-      `}>
-        {children}
-      </main>
-      <footer css={css`grid-area: footer;`}>
+      <MainWrapper>{children}</MainWrapper>
+      <footer
+        css={css`
+          grid-area: footer;
+        `}
+      >
         © {new Date().getFullYear()}, Built with
         {` `}
         <a href="https://www.gatsbyjs.org">Gatsby</a>
