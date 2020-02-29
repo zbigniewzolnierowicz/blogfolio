@@ -46,16 +46,22 @@ const IndexPage = () => {
               grid-row: 1 / span 2;
               grid-column: 1 / -1;
             }
+            @media screen and (max-width: 641px) {
+              font-size: 9pt !important;
+            }
+            @media screen and (max-width: 492px) {
+              font-size: 8pt !important;
+            }
             text-align: center;
             h2,
             h3 {
               margin: 0.5rem 0;
             }
             h2 {
-              font-size: 4rem;
+              font-size: 4em;
             }
             h3 {
-              font-size: 2rem;
+              font-size: 2em;
             }
           `}
         >
@@ -76,6 +82,10 @@ const IndexPage = () => {
             @media screen and (max-width: 935px) {
               grid-row: 3 / span 3;
               grid-column: 2 / -2;
+            }
+            @media screen and (max-width: 465px) {
+              grid-row: 3 / span 3;
+              grid-column: 1 / -1;
             }
           `}
         />
