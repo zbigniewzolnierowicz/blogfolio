@@ -38,7 +38,6 @@ const Layout = ({ children }) => {
       <Header siteTitle={data.site.siteMetadata.title} />
       <main css={css`
         grid-area: main;
-        padding: 20px;
       `}>
         {children}
       </main>
