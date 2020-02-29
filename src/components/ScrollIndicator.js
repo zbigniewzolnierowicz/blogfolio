@@ -12,7 +12,7 @@ export const ScrollIndicator = ({ svgStyle, onClick }) => (
         cursor: pointer;
         height: 10vh;
         g {
-          fill: #ffffff;
+          fill: var(--color-text-main);
         }
       `,
     ]}
