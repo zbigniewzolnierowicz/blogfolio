@@ -2,11 +2,11 @@ import { Link } from "gatsby"
 import React from "react"
 import { css } from "@emotion/core"
 
-const Header = ({ siteTitle }) => (
+const Header = ({ siteTitle, headerStyle }) => (
   <header
-    css={css`
+    css={[css`
       grid-area: header;
-      background: rgb(0, 11, 25);
+      background: var(--color-background-main);
       height: 10vh;
       width: 100%;
       display: flex;
@@ -18,7 +18,7 @@ const Header = ({ siteTitle }) => (
         top: unset;
         bottom: 0;
       }
-    `}
+    `, headerStyle]}
   >
     <Link to="/404">My projects</Link>
     <Link to="/404">My blog</Link>

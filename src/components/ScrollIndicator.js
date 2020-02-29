@@ -2,7 +2,7 @@ import React from "react"
 import { Timeline, Tween } from "react-gsap"
 import { css } from '@emotion/core'
 
-export const ScrollIndicator = ({ svgStyle }) => (
+export const ScrollIndicator = ({ svgStyle, onClick }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 124 371.62"
@@ -12,6 +12,7 @@ export const ScrollIndicator = ({ svgStyle }) => (
         fill: #ffffff;
       }
     `]}
+    onClick={onClick}
   >
     <g id="TrackLayer">
       <g id="Track" data-name="Track">

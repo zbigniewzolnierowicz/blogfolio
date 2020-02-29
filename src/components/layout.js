@@ -12,8 +12,8 @@ const AppWrapper = styled.div`
   flex-direction: column;
   min-height: 100%;
   width: 100%;
-  background: url(${props => props.bgUrl}), rgb(42, 96, 137);
-  background-position: center;
+  background: var(--color-background-main);
+  background-position: top;
   background-size: cover;
 `
 
@@ -44,7 +44,7 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <AppWrapper bgUrl={data.backgroundPath.publicURL}>
+    <AppWrapper>
       <Header siteTitle={data.site.siteMetadata.title} />
       <MainWrapper>{children}</MainWrapper>
       <footer
