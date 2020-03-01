@@ -15,7 +15,7 @@ const PillWrapper = styled.div`
         margin-right: 1ch;
     }
     @media screen and (max-width: 935px) {
-        font-size: 12px;
+        font-size: 11pt;
     }
 `
 

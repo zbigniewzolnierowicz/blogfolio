@@ -40,7 +40,7 @@ const Header = ({ siteTitle, headerStyle }) => (
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(15ch, 1fr));
         @media screen and (max-width: 935px) {
-          grid-template-columns: repeat(auto-fill, minmax(10ch, 1fr));
+          grid-template-columns: repeat(auto-fit, minmax(12ch, 1fr));
         }
         grid-template-rows: auto;
         height: 100%;
@@ -49,8 +49,8 @@ const Header = ({ siteTitle, headerStyle }) => (
         justify-items: center;
       `}
     >
-      <FAIconLink to="/" icon={faHome} title="Home page">Home</FAIconLink>
-      <FAIconLink to="/" icon={faNewspaper} title="Blog">Blog</FAIconLink>
+      <FAIconLink to="/" icon={faHome} title="Home page"/>
+      <FAIconLink to="/" icon={faNewspaper} title="Blog"/>
       <PillLink
         to="/"
         linkStyle={css`grid-column: -2 / span 1`}

@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { StyledLink } from "./StyledLink"
 import { css } from '@emotion/core'
 
-export const FAIconLink = ({ to, icon, title, children, minimize = false }) => (
+export const FAIconLink = ({ to, icon, title, minimize = false }) => (
     <StyledLink
         role="listitem"
         to={to}
@@ -26,6 +26,6 @@ export const FAIconLink = ({ to, icon, title, children, minimize = false }) => (
               }
         `}
     >
-        <FontAwesomeIcon icon={icon} size="2x" css={css`margin-right: 1ch;`} /><span className="text">{children}</span>
+        <FontAwesomeIcon icon={icon} size="2x" css={css`margin-right: 1ch;`} /><span className="text">{title}</span>
     </StyledLink>
 )
