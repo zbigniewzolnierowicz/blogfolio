@@ -42,14 +42,14 @@ const IndexPage = () => {
           css={css`
             grid-row: 2 / span 3;
             grid-column: 1 / span 3;
-            @media screen and (max-width: 983px) {
+            @media screen and (max-width: 983px) and (orientation: portrait) {
               grid-row: 1 / span 2;
               grid-column: 1 / -1;
             }
-            @media screen and (max-width: 641px) {
+            @media screen and (max-width: 641px) and (orientation: portrait) {
               font-size: 9pt !important;
             }
-            @media screen and (max-width: 492px) {
+            @media screen and (max-width: 492px) and (orientation: portrait) {
               font-size: 8pt !important;
             }
             text-align: center;
@@ -81,11 +81,11 @@ const IndexPage = () => {
             grid-row: 1 / 6;
             grid-column: 4 / 6;
             animation: 1s slideInUpFadeIn;
-            @media screen and (max-width: 983px) {
+            @media screen and (max-width: 983px) and (orientation: portrait) {
               grid-row: 3 / span 3;
               grid-column: 2 / -2;
             }
-            @media screen and (max-width: 465px) {
+            @media screen and (max-width: 465px) and (orientation: portrait) {
               grid-row: 3 / span 3;
               grid-column: 1 / -1;
             }
