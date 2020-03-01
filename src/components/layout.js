@@ -19,11 +19,11 @@ const AppWrapper = styled.div`
 
 const MainWrapper = styled.main`
   grid-area: main;
-  div:first-of-type {
+  *:first-of-type {
     margin-top: 10vh;
   }
   @media screen and (max-width: 935px) {
-    div:first-of-type {
+    *:first-of-type {
       margin-top: 0;
     }
   }

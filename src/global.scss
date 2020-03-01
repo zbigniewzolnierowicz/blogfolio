@@ -3,8 +3,9 @@
 }
 
 :root {
-    --color-text-main: rgb(34, 49, 63);
-    --color-background-main: rgb(246, 202, 202);
+    --color-text-main: hsl(209, 30%, 19%);
+    --color-text-secondary: hsl(209, 30%, 40%);
+    --color-background-main: hsl(0, 71%, 88%);
 }
 
 html {
@@ -36,7 +37,7 @@ h1, h2, h3, h4, h5 {
 
 @keyframes slideInUpFadeIn {
     0% {
-        transform: translateY(300px) scale(0);
+        transform: translateY(30px) scale(0.75);
         opacity: 0;
     }
     50% {

@@ -6,7 +6,7 @@ import styled from "@emotion/styled"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { ScrollIndicator } from "../components/ScrollIndicator"
-import { scrollToRef } from "../lib/scrollTo"
+import { scrollToRef } from "../lib/scrollToRef"
 
 const SingleScreenWrapper = styled.div`
   padding: 20px;
@@ -63,6 +63,7 @@ const IndexPage = () => {
             h3 {
               font-size: 2em;
             }
+            animation: 1s slideInUpFadeIn ease;
           `}
         >
           <h2>Zbigniew Żołnierowicz</h2>
@@ -79,6 +80,7 @@ const IndexPage = () => {
             object-fit: contain;
             grid-row: 1 / 6;
             grid-column: 4 / 6;
+            animation: 1s slideInUpFadeIn;
             @media screen and (max-width: 935px) {
               grid-row: 3 / span 3;
               grid-column: 2 / -2;
