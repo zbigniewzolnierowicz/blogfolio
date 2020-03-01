@@ -55,6 +55,7 @@ const Header = ({ siteTitle, headerStyle }) => (
       <FAIconLink to="/404" icon={faNewspaper} title="Blog" />
       <PillLink
         to="/404"
+        role="listitem"
         linkStyle={css`
           grid-column: -2 / span 1;
           height: 100%;

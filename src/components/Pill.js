@@ -23,9 +23,9 @@ const PillWrapper = styled.div`
   }
 `
 
-export const PillLink = ({ children, to, linkStyle }) => {
+export const PillLink = ({ children, to, linkStyle, role }) => {
   return (
-    <StyledLink to={to} linkStyle={linkStyle}>
+    <StyledLink to={to} linkStyle={linkStyle} role={role}>
       <PillWrapper>{children}</PillWrapper>
     </StyledLink>
   )

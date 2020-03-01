@@ -2,10 +2,11 @@ import React from "react"
 import { css } from "@emotion/core"
 import { Link } from "gatsby"
 
-export const StyledLink = ({ to, children, linkStyle }) => {
+export const StyledLink = ({ to, children, linkStyle, role }) => {
   return (
     <Link
       to={to}
+      role={role}
       css={[
         linkStyle,
         css`
