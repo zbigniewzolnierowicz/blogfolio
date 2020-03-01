@@ -10,6 +10,8 @@ export const FAIconLink = ({ to, icon, title, minimize = false }) => (
     to={to}
     title={title}
     linkStyle={css`
+      height: 100%;
+      width: 100%;
       display: flex;
       flex-direction: row;
       gap: 2ch;
@@ -19,7 +21,7 @@ export const FAIconLink = ({ to, icon, title, minimize = false }) => (
       .text {
         display: ${minimize ? "none" : "inline-block"};
       }
-      @media screen and (max-width: 935px) {
+      @media screen and (max-width: 983px) {
         .text {
           display: none;
         }
@@ -28,7 +30,6 @@ export const FAIconLink = ({ to, icon, title, minimize = false }) => (
   >
     <FontAwesomeIcon
       icon={icon}
-      size="2x"
       css={css`
         margin-right: 1ch;
       `}

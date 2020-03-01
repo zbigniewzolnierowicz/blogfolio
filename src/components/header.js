@@ -19,7 +19,9 @@ const Header = ({ siteTitle, headerStyle }) => (
         align-items: center;
         position: fixed;
         top: 0;
-        @media screen and (max-width: 935px) {
+        font-size: 18pt;
+        @media screen and (max-width: 983px) {
+          font-size: 28pt;
           top: unset;
           bottom: 0;
           .pageTitle {
@@ -38,9 +40,9 @@ const Header = ({ siteTitle, headerStyle }) => (
       role="list"
       css={css`
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(15ch, 1fr));
-        @media screen and (max-width: 935px) {
-          grid-template-columns: repeat(auto-fit, minmax(12ch, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(14ch, 1fr));
+        @media screen and (max-width: 983px) {
+          grid-template-columns: repeat(3, 1fr);
         }
         grid-template-rows: auto;
         height: 100%;
@@ -55,6 +57,12 @@ const Header = ({ siteTitle, headerStyle }) => (
         to="/404"
         linkStyle={css`
           grid-column: -2 / span 1;
+          height: 100%;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
         `}
       >
         <FontAwesomeIcon icon={faList} />

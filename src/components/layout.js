@@ -22,7 +22,7 @@ const MainWrapper = styled.main`
   > *:first-of-type {
     margin-top: 10vh;
   }
-  @media screen and (max-width: 935px) {
+  @media screen and (max-width: 983px) {
     > *:first-of-type {
       margin-top: 0;
     }
@@ -50,7 +50,7 @@ const Layout = ({ children }) => {
       <footer
         css={css`
           grid-area: footer;
-          @media screen and (max-width: 935px) {
+          @media screen and (max-width: 983px) {
             margin-bottom: 10vh;
           }
         `}

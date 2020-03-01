@@ -8,14 +8,18 @@ const PillWrapper = styled.div`
   padding: 0 1ch;
   background: var(--color-background-secondary);
   font-size: 12pt;
-  height: var(--height);
+  min-height: var(--height);
+  height: fit-content;
   line-height: var(--height);
   border-radius: var(--height);
   > *:first-of-type {
     margin-right: 1ch;
   }
-  @media screen and (max-width: 935px) {
+  @media screen and (max-width: 983px) {
     font-size: 11pt;
+  }
+  @media screen and (max-width: 345px) {
+    font-size: 9pt;
   }
 `
 
