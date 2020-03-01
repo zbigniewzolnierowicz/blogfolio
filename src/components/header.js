@@ -49,13 +49,16 @@ const Header = ({ siteTitle, headerStyle }) => (
         justify-items: center;
       `}
     >
-      <FAIconLink to="/" icon={faHome} title="Home page"/>
-      <FAIconLink to="/404" icon={faNewspaper} title="Blog"/>
+      <FAIconLink to="/" icon={faHome} title="Home page" />
+      <FAIconLink to="/404" icon={faNewspaper} title="Blog" />
       <PillLink
         to="/404"
-        linkStyle={css`grid-column: -2 / span 1`}
+        linkStyle={css`
+          grid-column: -2 / span 1;
+        `}
       >
-        <FontAwesomeIcon icon={faList}/>My portfolio
+        <FontAwesomeIcon icon={faList} />
+        My portfolio
       </PillLink>
     </div>
   </header>
