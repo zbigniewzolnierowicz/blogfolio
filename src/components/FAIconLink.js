@@ -30,9 +30,6 @@ export const FAIconLink = ({ to, icon, title, minimize = false }) => (
   >
     <FontAwesomeIcon
       icon={icon}
-      css={css`
-        margin-right: 1ch;
-      `}
     />
     <span className="text">{title}</span>
   </StyledLink>
