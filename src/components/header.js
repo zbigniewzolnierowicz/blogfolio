@@ -50,9 +50,9 @@ const Header = ({ siteTitle, headerStyle }) => (
       `}
     >
       <FAIconLink to="/" icon={faHome} title="Home page"/>
-      <FAIconLink to="/" icon={faNewspaper} title="Blog"/>
+      <FAIconLink to="/404" icon={faNewspaper} title="Blog"/>
       <PillLink
-        to="/"
+        to="/404"
         linkStyle={css`grid-column: -2 / span 1`}
       >
         <FontAwesomeIcon icon={faList}/>My portfolio
