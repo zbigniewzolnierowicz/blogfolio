@@ -1,28 +1,10 @@
 import React from "react"
 import { css } from "@emotion/core"
-import { Link } from "gatsby"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faHome, faNewspaper } from "@fortawesome/free-solid-svg-icons"
-import styled from "@emotion/styled"
+import { faHome, faNewspaper, faList } from "@fortawesome/free-solid-svg-icons"
 
-const StyledLink = styled(Link)`
-  margin-right: 2ch;
-  text-decoration: none;
-  transition: 300ms color ease;
-  &,
-  &:visited {
-    color: var(--color-text-main);
-  }
-  &:hover {
-    color: var(--color-text-secondary);
-  }
-`
-
-const FAIconLink = ({ to, icon, title }) => (
-  <StyledLink role="listitem" to={to} title={title}>
-    <FontAwesomeIcon icon={icon} size="2x" />
-  </StyledLink>
-)
+import { FAIconLink } from "./FAIconLink"
+import { PillLink } from "./Pill"
 
 const Header = ({ siteTitle, headerStyle }) => (
   <header
@@ -40,28 +22,41 @@ const Header = ({ siteTitle, headerStyle }) => (
         @media screen and (max-width: 935px) {
           top: unset;
           bottom: 0;
+          .pageTitle {
+            display: none;
+          }
         }
-        h1 {
+        .pageTitle {
           margin: 0 2ch;
         }
       `,
       headerStyle,
     ]}
   >
-    <h1>{siteTitle}</h1>
+    <h1 class="pageTitle">{siteTitle}</h1>
     <div
       role="list"
       css={css`
-        display: flex;
-        flex-direction: row;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(15ch, 1fr));
+        @media screen and (max-width: 935px) {
+          grid-template-columns: repeat(auto-fill, minmax(10ch, 1fr));
+        }
+        grid-template-rows: auto;
         height: 100%;
         width: 100%;
         align-items: center;
-        justify-content: flex-start;
+        justify-items: center;
       `}
     >
-      <FAIconLink to="/" icon={faHome} title="Home page" />
-      <FAIconLink to="/" icon={faNewspaper} title="Blog" />
+      <FAIconLink to="/" icon={faHome} title="Home page">Home</FAIconLink>
+      <FAIconLink to="/" icon={faNewspaper} title="Blog">Blog</FAIconLink>
+      <PillLink
+        to="/"
+        linkStyle={css`grid-column: -2 / span 1`}
+      >
+        <FontAwesomeIcon icon={faList}/>My portfolio
+      </PillLink>
     </div>
   </header>
 )
