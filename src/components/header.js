@@ -35,7 +35,7 @@ const Header = ({ siteTitle, headerStyle }) => (
       headerStyle,
     ]}
   >
-    <h1 class="pageTitle">{siteTitle}</h1>
+    <h1 className="pageTitle">{siteTitle}</h1>
     <div
       role="list"
       css={css`

@@ -2,11 +2,13 @@ import React, { useRef } from "react"
 import { css } from "@emotion/core"
 import { graphql, useStaticQuery } from "gatsby"
 import styled from "@emotion/styled"
+import Typed from "typed.js"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { ScrollIndicator } from "../components/ScrollIndicator"
 import { scrollToRef } from "../lib/scrollToRef"
+import { TypingText } from "../components/TypingText"
 
 const SingleScreenWrapper = styled.div`
   padding: 20px;
@@ -105,8 +107,19 @@ const IndexPage = () => {
           height: 100vh;
         `}
       >
-        <article>
-          <h2>Wow! Me!</h2>
+        <article css={css`
+          align-self: flex-start;
+          text-align: left;
+        `}>
+          <h3>
+            <TypingText
+              strings={[
+                "Who am I?",
+                "[root@localhost ~]$ whois",
+                "DESCRIBE me;"
+              ]}
+            />
+          </h3>
         </article>
       </SingleScreenWrapper>
     </Layout>
