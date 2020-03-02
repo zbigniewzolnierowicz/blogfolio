@@ -40,7 +40,7 @@ const IndexPage = () => {
     <Layout>
       <SEO title="Home" />
       <SingleScreenWrapper ref={sect_1}>
-        <article
+        <div
           css={css`
             grid-row: 2 / span 3;
             grid-column: 1 / span 3;
@@ -70,7 +70,7 @@ const IndexPage = () => {
         >
           <h2>Zbigniew Żołnierowicz</h2>
           <h3>{data.site.siteMetadata.description}</h3>
-        </article>
+        </div>
         <img
           src={data.file.publicURL}
           loading="lazy"
@@ -103,23 +103,37 @@ const IndexPage = () => {
       </SingleScreenWrapper>
       <SingleScreenWrapper
         ref={sect_2}
-        css={css`
-          height: 100vh;
-        `}
       >
-        <article css={css`
-          align-self: flex-start;
-          text-align: left;
+        <h2 css={css`
+          display: flex;
+          width: 100%;
+          font-family: monospace;
+          grid-column: 1 / span 2;
         `}>
-          <h3>
-            <TypingText
-              strings={[
-                "Who am I?",
-                "[root@localhost ~]$ whois",
-                "DESCRIBE me;"
-              ]}
-            />
-          </h3>
+          <TypingText
+            strings={[
+              "Who am I?",
+              "[root@localhost ~]$ whois",
+              "DESCRIBE me;"
+            ]}
+          />
+        </h2>
+        <article css={css`
+          grid-column: auto / span 3;
+        `}>
+            <p>My name is Zbigniew Żołnierowicz, and I've been coding for approximately 3 years, though only as a hobby.</p>
+            <p>
+              I first started by learning the usual - HTML, CSS and some basics of JavaScript.
+              That was around the time when I was in middle school, with the help of my school teachers.
+              Once I hit high school, I picked up C++ (then dropped it) and Python, dabbled with Go, but then I found my calling:
+            </p>
+            <div css={css`
+              font-size: 2em;
+              font-weight: 700;
+              margin: 0.5em 0;
+            `}>
+              I wanted to be a JavaScript front-end developer.
+            </div>
         </article>
       </SingleScreenWrapper>
     </Layout>
