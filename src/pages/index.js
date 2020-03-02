@@ -2,7 +2,6 @@ import React, { useRef } from "react"
 import { css } from "@emotion/core"
 import { graphql, useStaticQuery } from "gatsby"
 import styled from "@emotion/styled"
-import Typed from "typed.js"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
