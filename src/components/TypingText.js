@@ -1,28 +1,29 @@
-import React, { Component } from 'react'
-import Typed from 'typed.js'
+import React, { Component } from "react"
+import Typed from "typed.js"
 
 export class TypingText extends Component {
-    componentDidMount() {
-      const { strings } = this.props;
-      const options = {
-        strings: strings,
-        typeSpeed: 50,
-        backSpeed: 50,
-        loop: true
-      };
-      this.typed = new Typed(this.el, options);
+  componentDidMount() {
+    const { strings } = this.props
+    const options = {
+      strings: strings,
+      typeSpeed: 50,
+      backSpeed: 50,
+      loop: true,
     }
-  
-    componentWillUnmount() {
-      this.typed.destroy();
-    }
+    this.typed = new Typed(this.el, options)
+  }
 
-    render() {
-        return (
-            <span
-              style={{ whiteSpace: 'pre' }}
-              ref={(el) => { this.el = el; }}
-            />
-        )
-    }
+  componentWillUnmount() {
+    this.typed.destroy()
+  }
+
+  render() {
+    return (
+      <span
+        ref={el => {
+          this.el = el
+        }}
+      />
+    )
+  }
 }

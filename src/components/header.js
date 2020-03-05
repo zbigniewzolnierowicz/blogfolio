@@ -21,7 +21,7 @@ const Header = ({ siteTitle, headerStyle }) => (
         top: 0;
         font-size: 18pt;
         @media screen and (max-width: 983px) {
-          font-size: 28pt;
+          font-size: 22pt;
           top: unset;
           bottom: 0;
           .pageTitle {
@@ -40,7 +40,7 @@ const Header = ({ siteTitle, headerStyle }) => (
       role="list"
       css={css`
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(14ch, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(12ch, 1fr));
         @media screen and (max-width: 983px) {
           grid-template-columns: repeat(3, 1fr);
         }
@@ -51,7 +51,7 @@ const Header = ({ siteTitle, headerStyle }) => (
         justify-items: center;
       `}
     >
-      <FAIconLink to="/" icon={faHome} title="Home page" />
+      <FAIconLink to="/" icon={faHome} title="Home" />
       <FAIconLink to="/404" icon={faNewspaper} title="Blog" />
       <PillLink
         to="/404"
@@ -67,7 +67,7 @@ const Header = ({ siteTitle, headerStyle }) => (
         `}
       >
         <FontAwesomeIcon icon={faList} />
-        My portfolio
+        Projects
       </PillLink>
     </div>
   </header>
