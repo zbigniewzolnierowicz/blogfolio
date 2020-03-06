@@ -2,7 +2,11 @@ import React, { useRef } from "react"
 import { css } from "@emotion/core"
 import { graphql, useStaticQuery } from "gatsby"
 import styled from "@emotion/styled"
-import { faTwitter, faLinkedinIn, faGithub } from "@fortawesome/free-brands-svg-icons"
+import {
+  faTwitter,
+  faLinkedinIn,
+  faGithub,
+} from "@fortawesome/free-brands-svg-icons"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -23,8 +27,13 @@ const SingleScreenWrapper = styled.div`
   justify-items: center;
   align-items: center;
 `
-const SocialLinkPosition = css`grid-row: -1 / -1; grid-column: auto / span 1;`
-const SocialLinkAppearance = css`font-size: 20pt;`
+const SocialLinkPosition = css`
+  grid-row: -1 / -1;
+  grid-column: auto / span 1;
+`
+const SocialLinkAppearance = css`
+  font-size: 20pt;
+`
 const SocialLink = [SocialLinkPosition, SocialLinkAppearance]
 
 const IndexPage = () => {
@@ -121,7 +130,12 @@ const IndexPage = () => {
           icon={faGithub}
           to="https://github.com/zbigniewzolnierowicz"
           title="Github"
-          linkStyle={[SocialLink, css`grid-column: auto / span 2;`]}
+          linkStyle={[
+            SocialLink,
+            css`
+              grid-column: auto / span 2;
+            `,
+          ]}
         />
         <ScrollIndicator
           svgStyle={css`

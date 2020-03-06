@@ -2,7 +2,6 @@ import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import styled from "@emotion/styled"
-import { css } from "@emotion/core"
 
 import Header from "./header"
 import "../global.scss"
