@@ -2,6 +2,7 @@ import React, { useRef } from "react"
 import { css } from "@emotion/core"
 import { graphql, useStaticQuery } from "gatsby"
 import styled from "@emotion/styled"
+import { faTwitter, faLinkedinIn, faGithub } from "@fortawesome/free-brands-svg-icons"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -9,6 +10,8 @@ import { ScrollIndicator } from "../components/ScrollIndicator"
 import { scrollToRef } from "../lib/scrollToRef"
 import { TypingText } from "../components/TypingText"
 import { EmphasizeSpan } from "../components/EmphasizeSpan"
+import { FAIconLink } from "../components/FAIconLink"
+import { StyledA } from "../components/StyledLink"
 
 const SingleScreenWrapper = styled.div`
   padding: 20px;
@@ -20,6 +23,9 @@ const SingleScreenWrapper = styled.div`
   justify-items: center;
   align-items: center;
 `
+const SocialLinkPosition = css`grid-row: -1 / -1; grid-column: auto / span 1;`
+const SocialLinkAppearance = css`font-size: 20pt;`
+const SocialLink = [SocialLinkPosition, SocialLinkAppearance]
 
 const IndexPage = () => {
   const sect_1 = useRef(null)
@@ -93,6 +99,30 @@ const IndexPage = () => {
             }
           `}
         />
+        <FAIconLink
+          Wrapper={StyledA}
+          minimize={false}
+          icon={faTwitter}
+          to="https://twitter.com/zbgnwzlnrwcz"
+          title="Twitter"
+          linkStyle={SocialLink}
+        />
+        <FAIconLink
+          Wrapper={StyledA}
+          minimize={false}
+          icon={faLinkedinIn}
+          to="https://www.linkedin.com/in/zbigniew-%C5%BCo%C5%82nierowicz-b030ba1a4/"
+          title="LinkedIn"
+          linkStyle={SocialLink}
+        />
+        <FAIconLink
+          Wrapper={StyledA}
+          minimize={false}
+          icon={faGithub}
+          to="https://github.com/zbigniewzolnierowicz"
+          title="Github"
+          linkStyle={[SocialLink, css`grid-column: auto / span 2;`]}
+        />
         <ScrollIndicator
           svgStyle={css`
             grid-row: -1 / -1;
@@ -102,6 +132,7 @@ const IndexPage = () => {
         ></ScrollIndicator>
       </SingleScreenWrapper>
       <SingleScreenWrapper
+        id="whoami"
         ref={sect_2}
         css={css`
           font-size: 14pt;
@@ -128,7 +159,7 @@ const IndexPage = () => {
               "Who am I?",
               "sh$ whoami",
               "DESCRIBE me;",
-              "console.table(me)",
+              "console.table(me);",
             ]}
           />
         </h2>
@@ -175,7 +206,13 @@ const IndexPage = () => {
             by my programming hero -{" "}
             <a href="https://twitter.com/jaffathecake">Jake Archibald</a>), and
             thought:
-            <blockquote>&quot;Yeah, I like this.&quot;</blockquote>
+            <blockquote
+              css={css`
+                margin: 10px 0;
+              `}
+            >
+              &quot;Yeah, I like this.&quot;
+            </blockquote>
           </p>
           <h3>So what do I know?</h3>
           <p>
