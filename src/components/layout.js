@@ -29,6 +29,15 @@ const MainWrapper = styled.main`
   }
 `
 
+const Footer = styled.footer`
+  width: 100%;
+  height: 10vh;
+  grid-area: footer;
+  @media screen and (max-width: 983px) {
+    margin-bottom: 10vh;
+  }
+`
+
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -47,18 +56,11 @@ const Layout = ({ children }) => {
     <AppWrapper>
       <Header siteTitle={data.site.siteMetadata.title} />
       <MainWrapper>{children}</MainWrapper>
-      <footer
-        css={css`
-          grid-area: footer;
-          @media screen and (max-width: 983px) {
-            margin-bottom: 10vh;
-          }
-        `}
-      >
+      <Footer>
         © {new Date().getFullYear()}, Built with
         {` `}
         <a href="https://www.gatsbyjs.org">Gatsby</a>
-      </footer>
+      </Footer>
     </AppWrapper>
   )
 }
