@@ -1,1 +1,1 @@
-export const scrollToRef = ref => window.scrollTo(0, ref.current.offsetTop)
+export const scrollToRef = ref => ref.current.scrollIntoView({ block: "end" })
