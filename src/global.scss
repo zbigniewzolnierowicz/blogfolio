@@ -3,10 +3,22 @@
 }
 
 :root {
-    --color-text-main: hsl(209, 30%, 19%);
-    --color-text-secondary: hsl(209, 30%, 40%);
-    --color-background-main: hsl(0, 71%, 88%);
-    --color-background-secondary: hsl(0, 71%, 70%);
+    --color-text-main: hsl(--color-text-main-h, --color-text-main-s, --color-text-main-l);
+    --color-text-main-h: 209;
+    --color-text-main-s: 30%;
+    --color-text-main-l: 19%;
+    --color-text-secondary: hsl(--color-text-secondary-h, --color-text-secondary-s, --color-text-secondary-l);
+    --color-text-secondary-h: 209;
+    --color-text-secondary-s: 30%;
+    --color-text-secondary-l: 40%;
+    --color-background-main: hsl(--color-background-main-h, --color-background-main-s, --color-background-main-l);
+    --color-background-main-h: 0;
+    --color-background-main-s: 71%;
+    --color-background-main-l: 88%;
+    --color-background-secondary: hsl(--color-background-secondary-h, --color-background-secondary-s, --color-background-secondary-l);
+    --color-background-secondary-h: 0;
+    --color-background-secondary-s: 71%;
+    --color-background-secondary-l: 70%;
 }
 
 html {
