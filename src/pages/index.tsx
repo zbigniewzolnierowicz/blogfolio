@@ -53,7 +53,7 @@ const IndexPage = () => {
   `)
   return (
     <Layout>
-      <SEO title="Home" />
+      <SEO title="Home" description="Main page" meta={[]} />
       <SingleScreenWrapper ref={sect_1} css={css`height: 90vh;`}>
         <div
           css={css`
