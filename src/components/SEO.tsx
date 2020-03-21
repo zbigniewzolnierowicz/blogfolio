@@ -11,7 +11,7 @@ import { useStaticQuery, graphql } from "gatsby"
 
 
 interface SEOProps { description: string, title: string, lang?: string, meta?: Array<any> }
-function SEO({ description, lang = `en`, meta, title }: SEOProps) {
+function SEO({ description, lang = `en`, meta = [], title }: SEOProps) {
   const { site } = useStaticQuery(
     graphql`
       query {

@@ -9,7 +9,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons"
 
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import SEO from "../components/SEO"
 import { ScrollIndicator } from "../components/ScrollIndicator"
 import { scrollToRef } from "../lib/scrollToRef"
 import { TypingText } from "../components/TypingText"

@@ -6,7 +6,7 @@ import SEO from "../components/SEO"
 const PortfolioPage = () => {
     return (
         <Layout>
-            <SEO title="Portfolio" />
+            <SEO title="Portfolio" description="Projects I've worked on" />
             <div css={css`
                 min-height: 90vh;
                 width: 100%;
