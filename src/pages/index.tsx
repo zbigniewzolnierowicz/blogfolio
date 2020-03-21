@@ -19,7 +19,7 @@ import { StyledA } from "../components/StyledLink"
 
 const SingleScreenWrapper = styled.div`
   padding: 20px;
-  height: 90vh;
+  min-height: 90vh;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(5, 1fr);
@@ -54,7 +54,7 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Home" />
-      <SingleScreenWrapper ref={sect_1}>
+      <SingleScreenWrapper ref={sect_1} css={css`height: 90vh;`}>
         <div
           css={css`
             grid-row: 2 / span 3;

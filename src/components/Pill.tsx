@@ -2,6 +2,7 @@ import React from "react"
 import styled from "@emotion/styled"
 
 import { StyledLink } from "./StyledLink"
+import { SerializedStyles } from "@emotion/core"
 
 const PillWrapper = styled.div`
   --height: 25px;
@@ -23,7 +24,9 @@ const PillWrapper = styled.div`
   }
 `
 
-export const PillLink = ({ children, to, linkStyle, role }) => {
+interface PillLinkProps { children: (JSX.Element | string)[], to: string, linkStyle?: SerializedStyles, role: string }
+
+export const PillLink = ({ children, to, linkStyle, role }: PillLinkProps) => {
   return (
     <StyledLink to={to} linkStyle={linkStyle} role={role}>
       <PillWrapper>{children}</PillWrapper>
