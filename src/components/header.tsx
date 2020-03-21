@@ -1,12 +1,14 @@
 import React from "react"
-import { css } from "@emotion/core"
+import { css, SerializedStyles } from "@emotion/core"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faHome, faNewspaper, faList } from "@fortawesome/free-solid-svg-icons"
 
 import { FAIconLink } from "./FAIconLink"
 import { PillLink } from "./Pill"
 
-const Header = ({ siteTitle, headerStyle }) => (
+interface HeaderProps { siteTitle: string, headerStyle?: SerializedStyles }
+
+const Header = ({ siteTitle, headerStyle }: HeaderProps) => (
   <header
     css={[
       css`
@@ -54,7 +56,7 @@ const Header = ({ siteTitle, headerStyle }) => (
       <FAIconLink to="/" icon={faHome} title="Home" />
       <FAIconLink to="/404" icon={faNewspaper} title="Blog" />
       <PillLink
-        to="/404"
+        to="/portfolio"
         role="listitem"
         linkStyle={css`
           grid-column: -2 / span 1;
