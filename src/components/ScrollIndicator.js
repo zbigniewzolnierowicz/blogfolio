@@ -1,8 +1,8 @@
 import React from "react"
 import { Timeline, Tween } from "react-gsap"
-import { css, SerializedStyles } from "@emotion/core"
+import { css } from "@emotion/core"
 
-export const ScrollIndicator = ({ svgStyle, onClick }: { svgStyle: SerializedStyles, onClick: () => void }) => (
+export const ScrollIndicator = ({ svgStyle, onClick }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 124 371.62"
