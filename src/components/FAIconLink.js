@@ -1,11 +1,8 @@
 import React from "react"
-import { css, SerializedStyles } from "@emotion/core"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { IconProp } from "@fortawesome/fontawesome-svg-core"
 
 import { StyledLink } from "./StyledLink"
-
-interface FAIconLinkProps { to: string, icon: IconProp, title: string, minimize?: boolean, linkStyle?: Array<SerializedStyles | SerializedStyles[]>, Wrapper?: any }
+import { css } from "@emotion/core"
 
 export const FAIconLink = ({
   to,
@@ -14,7 +11,7 @@ export const FAIconLink = ({
   minimize = false,
   linkStyle,
   Wrapper = StyledLink,
-}: FAIconLinkProps) => (
+}) => (
   <Wrapper
     role="listitem"
     to={to}

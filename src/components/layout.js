@@ -1,4 +1,5 @@
 import React from "react"
+import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import styled from "@emotion/styled"
 
@@ -17,9 +18,13 @@ const AppWrapper = styled.div`
 
 const MainWrapper = styled.main`
   grid-area: main;
-  margin-top: 10vh;
+  > * {
+    margin-top: 10vh;
+  }
   @media screen and (max-width: 983px) {
-    margin-top: 0;
+    > * {
+      margin-top: 0;
+    }
   }
 `
 
@@ -32,8 +37,8 @@ const Footer = styled.footer`
   }
 `
 
-const Layout = ({ children }: React.Props<{ children: React.ReactElement[] }>) => {
-  const data: { site: { siteMetadata: { title: string }, backgroundPath: { publicURL: string } } } = useStaticQuery(graphql`
+const Layout = ({ children }) => {
+  const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
         siteMetadata {
@@ -57,6 +62,10 @@ const Layout = ({ children }: React.Props<{ children: React.ReactElement[] }>) =
       </Footer>
     </AppWrapper>
   )
+}
+
+Layout.propTypes = {
+  children: PropTypes.node.isRequired,
 }
 
 export default Layout
