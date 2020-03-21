@@ -26,6 +26,7 @@ const SingleScreenWrapper = styled.div`
   color: var(--color-text-main);
   justify-items: center;
   align-items: center;
+  text-align: justify;
 `
 const SocialLinkPosition = css`
   grid-row: -1 / -1;
