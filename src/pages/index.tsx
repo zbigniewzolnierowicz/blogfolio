@@ -178,6 +178,9 @@ const IndexPage = () => {
         </h2>
         <article
           css={css`
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
             grid-column: 1 / -1;
             grid-row: 2 / -1;
             overflow-y: auto;
