@@ -2,11 +2,9 @@ import React, { useRef } from "react"
 import { css } from "@emotion/core"
 import { graphql, useStaticQuery } from "gatsby"
 import styled from "@emotion/styled"
-import {
-  faTwitter,
-  faLinkedinIn,
-  faGithub,
-} from "@fortawesome/free-brands-svg-icons"
+import faTwitter from "@fortawesome/free-brands-svg-icons/faTwitter"
+import faLinkedinIn from "@fortawesome/free-brands-svg-icons/faLinkedinIn"
+import faGithub from "@fortawesome/free-brands-svg-icons/faGithub"
 
 import Layout from "../components/layout"
 import SEO from "../components/SEO"
