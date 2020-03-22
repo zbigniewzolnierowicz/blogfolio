@@ -14,6 +14,7 @@ const Header = ({ siteTitle, headerStyle }: HeaderProps) => (
       css`
         grid-area: header;
         background: var(--color-background-main);
+        color: var(--color-text-main);
         height: 10vh;
         width: 100%;
         display: flex;
