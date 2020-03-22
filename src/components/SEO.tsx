@@ -23,7 +23,7 @@ function SEO({ description, lang = `en`, meta = [], title }: SEOProps) {
             deployURL
           }
         }
-        file(relativePath: { eq: "face.svg" }) {
+        file(relativePath: { eq: "face.png" }) {
           publicURL
         }
       }
