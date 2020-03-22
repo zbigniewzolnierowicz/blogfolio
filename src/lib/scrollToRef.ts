@@ -1,1 +1,1 @@
-export const scrollToRef = ref => ref.current.scrollIntoView({ block: "end" })
+export const scrollToRef = (ref: { current: HTMLElement }) => ref.current.scrollIntoView({ block: "start" })
