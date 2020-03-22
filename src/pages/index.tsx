@@ -16,6 +16,7 @@ import { TypingText } from "../components/TypingText"
 import { EmphasizeSpan } from "../components/EmphasizeSpan"
 import { FAIconLink } from "../components/FAIconLink"
 import { StyledA } from "../components/StyledLink"
+import Face from "../components/Face"
 
 const SingleScreenWrapper = styled.div`
   padding: 20px;
@@ -87,11 +88,8 @@ const IndexPage = () => {
           <h2>Zbigniew Żołnierowicz</h2>
           <h3>{data.site.siteMetadata.description}</h3>
         </div>
-        <img
-          src={data.file.publicURL}
-          loading="lazy"
-          alt="my face"
-          css={css`
+        <Face
+          svgCss={css`
             margin: 20px;
             max-height: 100%;
             max-width: 100%;
