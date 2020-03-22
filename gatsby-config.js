@@ -3,7 +3,7 @@ module.exports = {
     title: `zbgnwzlnrwcz`,
     description: `I code, and I also can make a great grilled cheese sandwich.`,
     author: `Zbigniew Żołnierowicz`,
-    deployURL: `https://zbigniew.zolnierowi.cz`
+    deployURL: `https://zbigniew.zolnierowi.cz`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -34,12 +34,12 @@ module.exports = {
     `gatsby-plugin-sass`,
     `gatsby-plugin-typescript`,
     {
-      resolve: 'gatsby-plugin-react-svg',
+      resolve: "gatsby-plugin-react-svg",
       options: {
         rule: {
-          include: /assets/
-        }
-      }
+          include: /assets/,
+        },
+      },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
