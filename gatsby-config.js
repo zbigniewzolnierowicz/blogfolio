@@ -3,6 +3,7 @@ module.exports = {
     title: `zbgnwzlnrwcz`,
     description: `I code, and I also can make a great grilled cheese sandwich.`,
     author: `Zbigniew Żołnierowicz`,
+    deployURL: `https://zbigniew.zolnierowi.cz`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

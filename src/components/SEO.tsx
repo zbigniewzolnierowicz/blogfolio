@@ -12,7 +12,7 @@ import { useStaticQuery, graphql } from "gatsby"
 
 interface SEOProps { description: string, title: string, lang?: string, meta?: Array<any> }
 function SEO({ description, lang = `en`, meta = [], title }: SEOProps) {
-  const { site, file } = useStaticQuery<{ site: { siteMetadata: { title: string, description: string, author: string } }, file: { publicURL: string } }>(
+  const { site, file } = useStaticQuery<{ site: { siteMetadata: { title: string, description: string, author: string, deployURL: string } }, file: { publicURL: string } }>(
     graphql`
       query {
         site {
@@ -20,6 +20,7 @@ function SEO({ description, lang = `en`, meta = [], title }: SEOProps) {
             title
             description
             author
+            deployURL
           }
         }
         file(relativePath: { eq: "face.svg" }) {
@@ -72,7 +73,7 @@ function SEO({ description, lang = `en`, meta = [], title }: SEOProps) {
         },
         {
           name: `og:image`,
-          content: `${file.publicURL}`
+          content: `${site.siteMetadata.deployURL}${file.publicURL}`
         }
       ].concat(meta)}
     />
