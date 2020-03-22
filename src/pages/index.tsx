@@ -2,9 +2,11 @@ import React, { useRef } from "react"
 import { css } from "@emotion/core"
 import { graphql, useStaticQuery } from "gatsby"
 import styled from "@emotion/styled"
-import faTwitter from "@fortawesome/free-brands-svg-icons/faTwitter"
-import faLinkedinIn from "@fortawesome/free-brands-svg-icons/faLinkedinIn"
-import faGithub from "@fortawesome/free-brands-svg-icons/faGithub"
+import {
+  faTwitter,
+  faLinkedinIn,
+  faGithub
+} from "@fortawesome/free-brands-svg-icons"
 
 import Layout from "../components/layout"
 import SEO from "../components/SEO"
@@ -220,14 +222,14 @@ const IndexPage = () => {
             by my programming hero -{" "}
             <a href="https://twitter.com/jaffathecake">Jake Archibald</a>), and
             thought:
-            <blockquote
-              css={css`
-                margin: 10px 0;
-              `}
-            >
-              &quot;Yeah, I like this.&quot;
-            </blockquote>
           </p>
+          <blockquote
+            css={css`
+              margin: 10px 0;
+            `}
+          >
+            &quot;Yeah, I like this.&quot;
+          </blockquote>
           <h3>So what do I know?</h3>
           <p>
             I've started with the basics, of course -{" "}
@@ -242,32 +244,32 @@ const IndexPage = () => {
             <EmphasizeSpan>Google Firebase</EmphasizeSpan>, and it became my
             place to prototype my apps, since it's so easy to use and roll out
             web apps. Other things I know include:
-            <ul>
-              <li>
-                state management libraries like{" "}
-                <EmphasizeSpan>VueX</EmphasizeSpan>
-              </li>
-              <li>TypeScript</li>
-              <li>
-                <EmphasizeSpan>React.js</EmphasizeSpan>, Emotion and Gatsby.js
-              </li>
-              <li>Express.js</li>
-              <li>SQL</li>
-              <li>GraphQL</li>
-              <li>
-                <EmphasizeSpan>Linux</EmphasizeSpan> (my system of choice,
-                though I can pivot to macOS or Windows)
-              </li>
-            </ul>
-            <span
-              css={css`
-                font-size: 0.75em;
-                font-style: italic;
-              `}
-            >
-              (emboldened technologies are ones I know well and am confident in
-              using)
-            </span>
+          </p>
+          <ul>
+            <li>
+              state management libraries like{" "}
+              <EmphasizeSpan>VueX</EmphasizeSpan>
+            </li>
+            <li>TypeScript</li>
+            <li>
+              <EmphasizeSpan>React.js</EmphasizeSpan>, Emotion and Gatsby.js
+            </li>
+            <li>Express.js</li>
+            <li>SQL</li>
+            <li>GraphQL</li>
+            <li>
+              <EmphasizeSpan>Linux</EmphasizeSpan> (my system of choice,
+              though I can pivot to macOS or Windows)
+            </li>
+          </ul>
+          <p
+            css={css`
+              font-size: 0.75em;
+              font-style: italic;
+            `}
+          >
+            (emboldened technologies are ones I know well and am confident in
+            using)
           </p>
         </article>
       </SingleScreenWrapper>
